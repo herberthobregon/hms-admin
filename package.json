@@ -1,0 +1,33 @@
+{
+	"name": "hms-admin",
+	"version": "0.1.1",
+	"description": "Huawei Mobile Services (HMS) admin SDK for Node.js",
+	"main": "index.js",
+	"repository": "https://github.com/herberthobregon/hms-admin",
+	"author": "Herberth Obregón",
+	"license": "BSD-3-Clause",
+	"private": false,
+	"type": "commonjs",
+	"keywords": [
+		"huawei",
+		"hms",
+		"admin"
+	],
+	"scripts": {
+		"prepare": "rm -rf *.map *.js *.ts;tsc"
+	},
+	"importSort": {
+		".js, .jsx, .ts, .tsx": {
+			"style": "module",
+			"parser": "typescript"
+		}
+	},
+	"dependencies": {
+		"@types/jsonwebtoken": "^8.5.0",
+		"jsonwebtoken": "^8.5.1",
+		"jwks-rsa": "^1.11.0"
+	},
+	"devDependencies": {
+		"tslib": "^2.0.3"
+	}
+}
