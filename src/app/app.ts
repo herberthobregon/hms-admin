@@ -1,7 +1,5 @@
-import { NSadmin } from '../admin/admin';
-
 export class app {
-	async initializeApp(options?: NSadmin.AppOptions, name?: string): Promise<NSapp.App> {
+	async initializeApp(options?: admin.app.AppOptions, name?: string): Promise<admin.app.App> {
 		return {
 			name: name || '[DEFAULT]',
 			options: options || {}
@@ -9,7 +7,7 @@ export class app {
 	}
 }
 
-export namespace NSapp {
+export namespace admin.app {
 	/**
 	 * A HMS app holds the initialization information for a collection of
 	 * services.
@@ -18,6 +16,31 @@ export namespace NSapp {
 	 * {@link https://developer.huawei.com/pendingLink#initializeApp `admin.initializeApp()`}
 	 * to create an app.
 	 */
+
+	export interface AppOptions {
+		/**
+		 * The URL of the Realtime Database from which to read and write data.
+		 */
+		databaseURL?: string;
+
+		/**
+		 * The ID of the service account to be used for signing custom tokens. This
+		 * can be found in the `client_email` field of a service account JSON file.
+		 */
+		serviceAccountId?: string;
+
+		/**
+		 * The name of the AppGallery Storage bucket used for storing application data.
+		 * Use only the bucket name without any prefixes or additions.
+		 */
+		storageBucket?: string;
+
+		/**
+		 * The ID of the AppGallery project associated with the App.
+		 */
+		projectId?: string;
+	}
+
 	export interface App {
 		/**
 		 * The (read-only) name for this app.
@@ -54,6 +77,6 @@ export namespace NSapp {
 		 * console.log(app.options.databaseURL === config.databaseURL);  // true
 		 * ```
 		 */
-		options: NSadmin.AppOptions;
+		options: admin.app.AppOptions;
 	}
 }

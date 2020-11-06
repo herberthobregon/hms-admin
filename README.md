@@ -68,7 +68,9 @@ As far as possible after my work I will document everything but in essence it is
 -   [Huawei Docs](https://developer.huawei.com)
 -   [Firebase Authentication Guide](https://firebase.google.com/docs/auth/admin/)
 
-## Acknowledgments
+At the moment I have started with the `auth()` and `admin.initializeApp()` module, and this one has the `admin.auth().verifyIdToken(TOKEN)` method, later I will add more features, if you want to collaborate you can send your pull request
+
+## Good to know
 
 **This is not an official library.** The HMS had the shortcoming of not having an official Node.js library. I have decided to write it so that huawei services can be more transparently integrated into your android apps and its backend written in Typescript or Node JS
 
